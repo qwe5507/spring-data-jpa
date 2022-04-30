@@ -5,17 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import study.datajpa.entity.Item;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class ItemRepositoryTest {
-    @Autowired
-    ItemRepository itemRepository;
+    @Autowired ItemRepository itemRepository;
+
 
     @Test
     public void save1() {
-        Item item = new Item("A");
+        Item item = new Item("123");
         itemRepository.save(item);
+
+        System.out.println("item = " + itemRepository.findAll().get(0).getId());
     }
 
 }
